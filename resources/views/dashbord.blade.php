@@ -1,20 +1,14 @@
 @extends('layouts.app')
-
 @section('content')
 <body class="overflow-x-hidden">
 <div> <a href="add"><button type="button" class="btn btn-outline-danger"> + Add Menu</button></a></div>
-
-
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Menu</h2>
         </div>
-       
     </div>
 </div>
-
-
 <table class="table">
     <thead>
       <tr>
@@ -25,9 +19,9 @@
         <th scope="col">price</th>
         <th scope="col">Action</th>
       </tr>
-      
+
     </thead>
-   
+
     <tbody>
         @foreach($menu as $menus)
       <tr>
@@ -37,9 +31,8 @@
           height:80px;;" src="/images/{{ $menus["image"]}}"/></td>
         <td> {{ $menus["description"] }}</td>
         <td> {{ $menus["price"] }}</td>
-        <td> <div><a href="{{ url('edit/'.$menus->id) }}"  class="btn btn-primary my-2 btn-sm px-2">Edit</a>
+        <td> <div><a href="{{ url('edite/'.$menus->id) }}"  class="btn btn-primary my-2 btn-sm px-2">Edit</a>
         </div>
-       
        
          <form action="{{'delete/'.$menus->id}}" method="POST">
              @method('DELETE')
@@ -49,12 +42,7 @@
             </button>
      </form></td>
       </tr>
-      
-    
       @endforeach
     </tbody>
-   
 </table>
-
-
 @endsection

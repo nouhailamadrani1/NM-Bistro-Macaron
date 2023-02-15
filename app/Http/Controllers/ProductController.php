@@ -4,19 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use League\CommonMark\Extension\Table\Table;
 use SebastianBergmann\CodeCoverage\Report\Xml\Tests;
 use Symfony\Component\Console\Input\Input;
 
         class ProductController extends Controller
         {
-            
-            public function index()
-            {
-              
-            }
-
-
             public function create()
             {
                 return view('products.create');
@@ -62,15 +56,10 @@ use Symfony\Component\Console\Input\Input;
                 $menu->name = $request->input('name');
 
                  if ($image = $request->file('image')) {
-                    // dd($request);
-                    // die();
                     $destinationPath = 'images/';
                     $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
                     $image->move($destinationPath, $postImage);
                     $menu->image = "$postImage";
-                    //             dd($menu->image);
-                    // die();
-                   
                  }
                 
                 $menu->description = $request->input('description');
@@ -89,7 +78,8 @@ use Symfony\Component\Console\Input\Input;
             public function showTow()
             { 
                 $menu = Test::all();
-                return view('home')->with('menu',$menu);
+                $user = Auth::user();
+                return view('home',compact('user'))->with('menu',$menu);
             }
         }
        

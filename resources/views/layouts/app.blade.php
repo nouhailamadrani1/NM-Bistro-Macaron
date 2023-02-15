@@ -17,12 +17,13 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body  class="overflow-x-hidden">
     <div id="app">
         <nav class="navbar navbar-expand-md shadow-sm"  style="background:rgb(238, 234, 235);">
             <div class="container">
                 <a class=" text-decoration-none text-black fs-4 fst-italic" href="/homeMenu"><b>NM <span style="color:rgb(126, 166, 81) ">
                     Bistro </span>Macaron </b></a>
+                   
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -64,8 +65,12 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                  
                                 </div>
+                               
+                                
                             </li>
+                          
                         @endguest
                     </ul>
                 </div>

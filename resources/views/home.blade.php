@@ -1,12 +1,13 @@
 @extends('layouts.app')
-
 @section('content')
-<body class="overflow-x-hidden">
 <div class="d-flex justify-content-center">
-
     <a class=" text-decoration-none text-black p-4 fs-4 fst-italic" href="#"><b>NM <span style="color:rgb(126, 166, 81) ">
         Bistro </span>Macaron </b></a>
     </div>
+    <div class="d-flex justify-content-center ">
+    <a class="btn btn-danger text-decoration-none text-white  fs-5 " href="{{ url('profile',$user->id) }}">
+      profile  
+   </a></div>
     <div  class="d-flex justify-content-between shadow">
         <div> 
             <img src="./images/bbb.jpg" class=" d-none d-sm-block " alt="..." style=" width: auto;
@@ -26,7 +27,6 @@
 </div>
 @endif
 
-
 <h4 class="text-center my-4 fst-italic">MACAROON MENU</h4>
     <div class="d-flex justify-content-center flex-wrap my-3">
         @foreach($menu as $menus)
@@ -41,52 +41,17 @@
           </div>
           @endforeach  
     </div>
-
-        <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
       <div class="me-5 d-none d-lg-block">
         <span>Get connected :</span>
       </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
     </section>
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
         <div class="row mt-3">
-          <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              
                 <a class=" text-decoration-none text-black me-3  fst-italic" href="#"><b>NM <span style="color:rgb(4, 127, 157) ">
                     Bistro </span>Macaron </b></a>
             </h6>
@@ -94,20 +59,11 @@
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo dignissimos non labore tempora tempore praesentium quidem debitis laudantium! Porro Quo, quod odit.
             </p>
           </div>
-       
-           
-        
-          <!-- Grid column -->
           <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-4">
-            <!-- Links -->
             <h6 class="text-black fw-bold mb-4">Map</h6>
             <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=california&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style><a href="https://embedgooglemap.2yu.co/">html embed google map</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div></div>
           </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
             <h6 class="text-black fw-bold mb-4">Contact</h6>
             <p><i class="fas fa-home me-3"></i> Maroc, Youssoufia, YouCode</p>
             <p>
@@ -117,16 +73,9 @@
             <p><i class="fas fa-phone me-3"></i> + 212 639 467 124</p>
             <p><i class="fas fa-print me-3"></i> + 212 534 567 829</p>
           </div>
-          <!-- Grid column -->
         </div>
-        <!-- Grid row -->
       </div>
     </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-   
-    <!-- Copyright -->
   </footer>
   
     
